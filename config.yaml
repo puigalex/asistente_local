@@ -1,0 +1,9 @@
+#config.yaml 
+stt:
+  name: whisper
+  recording_time: 3
+  silence_break: 3
+  model_size: base
+  sensibility: 1000
+asistente:
+  wake_word: oye computadora
