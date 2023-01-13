@@ -29,8 +29,34 @@ Para facilitar la configuracion de los ambientes se tiene dos contenedores de Do
 Aqui hay una [guía para instalar/configurar Docker para ML](https://www.youtube.com/watch?v=keGTBSVoHeU)
 
 ### ARM
+```
+# 
+# Ejecutar desde la carpeta donde se clono este repositorio en la maquina huesped.
+sudo docker run -it -v $PWD:/va --device=/dev/snd:/dev/snd --gpus all puigalex/va_arm
+```
+
+Una vez dentro del repositorio se debe de correr:
+```
+cd /va
+python main.py
+```
+
 
 ### x86
+Ya instalado docker con NVIDIA container toolkit.
+
+```
+# 
+# Ejecutar desde la carpeta donde se clono este repositorio en la maquina huesped.
+sudo docker run -it -v $PWD:/va --device=/dev/snd:/dev/snd --gpus all puigalex/va
+```
+
+Una vez dentro del repositorio se debe de correr:
+```
+cd /va
+python main.py
+```
+
 
 ## Aportaciones
 Este proyecto esta abierto a aportaciones asi que si quieres mejorar o agregar funcionalidades haz un pull request.
@@ -38,7 +64,11 @@ Este proyecto esta abierto a aportaciones asi que si quieres mejorar o agregar f
 # To Do:
 - [X] Detectar palabra clave para que el asistente sepa que se le esta hablando 
 - [ ] Crear Dockerfile para no requerir pull
+- [ ] Modularizar el __init__ de la clase Asistente en distintas funciones
 - [ ] API OpenAI GPT-3 (No es local, pero si uso sera limitado)
 - [ ] Probar en Jetson Nano
 - [X] Parametros dentro de YAML
 
+# Créditos y aportaciones
+Lista de repositorios y recursos consultados o usados para este asistente virtual. 
+* Implementación con mejoras para correr Whisper cercano a en tiempo real. [Github Davase](https://github.com/davabase/whisper_real_time)

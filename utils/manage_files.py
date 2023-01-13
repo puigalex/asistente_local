@@ -17,5 +17,5 @@ def read_file(filename, filetype):
         return(config_data)
 
 def write_file(data, filename, filetype):
-    with open("sample.txt", "a") as file:
+    with open("{}.{}".format(filename, filetype), "a") as file:
         file.write(data)

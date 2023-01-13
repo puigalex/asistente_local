@@ -6,4 +6,4 @@ stt:
   model_size: base
   sensibility: 1000
 asistente:
-  wake_word: oye computadora
+  wake_word: ordenador

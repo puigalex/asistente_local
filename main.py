@@ -1,22 +1,18 @@
-import whisper
-import recorder
-import time 
+from utils import read_file
+from asistente import Asistente
 
-model = whisper.load_model("tiny")
-audio = recorder.Recorder()
-start = time.time()
-print("Inicia grabación ")
-audio.record()
-counter = 1 
+CONFIG_PARAMS = read_file("config", "yaml")
 
-while True:
-    timestamp = time.time()
-    if (timestamp-start)% 10 ==0:
-        print("Nuevo timestamp")
-        audio.save(str(counter))
-        audio.record()
-        result = model.transcribe("{}.wav".format(counter), verbose=None)
-        print("Proceso el audio ", str(counter))
-        with open("sample.txt", "a") as file_object:
-            file_object.write("{}\n".format(result["text"]))
-        counter += 1
+def main():
+
+    model = CONFIG_PARAMS["stt"]["model_size"]
+    record_timeout = CONFIG_PARAMS["stt"]["recording_time"]
+    phrase_timeout = CONFIG_PARAMS["stt"]["silence_break"]
+    energy_threshold = CONFIG_PARAMS["stt"]["sensibility"]
+    wake_word = CONFIG_PARAMS["asistente"]["wake_word"]
+
+    va = Asistente(model, record_timeout, phrase_timeout, energy_threshold, wake_word)
+    va.write_transcript()
+
+if __name__ == "__main__":
+    main()
