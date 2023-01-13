@@ -32,7 +32,7 @@ Aqui hay una [guía para instalar/configurar Docker para ML](https://www.youtube
 ```
 # 
 # Ejecutar desde la carpeta donde se clono este repositorio en la maquina huesped.
-sudo docker run -it -v $PWD:/va --device=/dev/snd:/dev/snd --gpus all puigalex/va_arm
+sudo docker run -it -v $PWD:/va --device=/dev/snd:/dev/snd //runtime nvidia //network host puigalex/va_arm
 ```
 
 Una vez dentro del repositorio se debe de correr:
