@@ -12,6 +12,7 @@ def main():
     wake_word = CONFIG_PARAMS["asistente"]["wake_word"]
 
     va = Asistente(model, record_timeout, phrase_timeout, energy_threshold, wake_word)
+    va.listen()
     va.write_transcript()
 
 if __name__ == "__main__":

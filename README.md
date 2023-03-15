@@ -62,10 +62,11 @@ python main.py
 Este proyecto esta abierto a aportaciones asi que si quieres mejorar o agregar funcionalidades haz un pull request.
 
 # To Do:
+- [X] Transcipción en tiempo real 
 - [X] Detectar palabra clave para que el asistente sepa que se le esta hablando 
 - [ ] Crear Dockerfile para no requerir pull
 - [ ] Modularizar el __init__ de la clase Asistente en distintas funciones
-- [ ] API OpenAI GPT-3 (No es local, pero si uso sera limitado)
+- [ ] API OpenAI GPT-3 (No es local, pero su uso sera limitado)
 - [ ] Probar en Jetson Nano
 - [X] Parametros dentro de YAML
 
