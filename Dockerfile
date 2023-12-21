@@ -5,7 +5,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 # libgtk2.0-0 libgtk2.0-common libportaudio2 \
 # libportaudiocpp0 portaudio19-dev python3-pyaudio && \
 # apt-get clean
-RUN apt-get clean
+RUN rm /etc/apt/sources.list.d/cuda*.list
 RUN apt-get update
 RUN apt-get --no-install-recommends install -y ffmpeg
 RUN apt-get --no-install-recommends install -y libgtk2.0-0
