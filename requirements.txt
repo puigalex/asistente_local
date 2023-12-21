@@ -1,0 +1,6 @@
+pyyaml~=6.0
+SpeechRecognition~=3.10
+openai~=1.6.0
+gtts~=2.5.0
+pygame~=2.5.2
+#python3-pyaudio~=0.2.14
