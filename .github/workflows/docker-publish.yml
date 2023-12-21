@@ -42,3 +42,5 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          arch: armv7
+          distro: ubuntu22.04
