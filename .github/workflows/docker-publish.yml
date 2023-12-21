@@ -35,7 +35,7 @@ jobs:
           images: karlosarr/asistente-local
       
       - name: Build and push Docker image
-        uses: docker/build-push-action@v6.2
+        uses: docker/build-push-action@v5
         with:
           context: .
           file: ./Dockerfile
