@@ -37,7 +37,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         env:
-          DOCKER_BUILDKIT: 0
+          DOCKER_BUILDKIT: 1
         with:
           context: .
           file: ./Dockerfile
