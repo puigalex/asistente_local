@@ -1,20 +1,12 @@
 FROM nvcr.io/nvidia/l4t-pytorch:r35.1.0-pth1.13-py3
+LABEL maintainer="Carlos Ruiz <karlosarr[at]protonmail.com>"
 ARG DEBIAN_FRONTEND=noninteractive
-#RUN apt-get update && \
-# apt-get --no-install-recommends install -y ffmpeg \
-# libgtk2.0-0 libgtk2.0-common libportaudio2 \
-# libportaudiocpp0 portaudio19-dev python3-pyaudio && \
-# apt-get clean
-RUN rm /etc/apt/sources.list.d/cuda*.list
-RUN apt-get update
-RUN apt-get --no-install-recommends install -y ffmpeg
-RUN apt-get --no-install-recommends install -y libgtk2.0-0
-RUN apt-get --no-install-recommends install -y libgtk2.0-common
-RUN apt-get --no-install-recommends install -y libportaudio2
-RUN apt-get --no-install-recommends install -y libportaudiocpp0
-RUN apt-get --no-install-recommends install -y portaudio19-dev
-RUN apt-get --no-install-recommends install -y python3-pyaudio
-RUN apt-get clean
+RUN whoami
+RUN apt-get update && \
+ apt-get --no-install-recommends install -y ffmpeg \
+ libgtk2.0-0 libgtk2.0-common libportaudio2 \
+ libportaudiocpp0 portaudio19-dev python3-pyaudio && \
+ apt-get clean
 RUN pip3 install git+https://github.com/openai/whisper.git 
 RUN pip3 install sounddevice
 RUN pip3 install scipy
