@@ -44,12 +44,11 @@ python main.py
 ```
 
 
-# Ejecutar con docker compose desde la carpeta donde se clono este repositorio en la maquina huesped.
 ```
-# Consola interactiva con el contanedor
+# Ejecutar con docker compose desde la carpeta donde se clono este repositorio en la maquina huesped.
 docker compose run --build --rm asistente bash
 
-ejecutar aplicación manualmente
+# Ejecutar aplicación manualmente
 python3 ./main.py
 ```
 
