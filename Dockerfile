@@ -1,7 +1,7 @@
 FROM nvcr.io/nvidia/l4t-pytorch:r35.1.0-pth1.13-py3
 LABEL maintainer="Carlos Ruiz <karlosarr[at]protonmail.com>"
 ARG DEBIAN_FRONTEND=noninteractive
-RUN whoami
+RUN apt-get install qemu-arm-static
 RUN apt-get update && \
  apt-get --no-install-recommends install -y ffmpeg \
  libgtk2.0-0 libgtk2.0-common libportaudio2 \
