@@ -1,3 +1,5 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=karlosarr_asistente_local&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=karlosarr_asistente_local)
+
 # Asistente Virtual Local 
 Proyecto educativo ([Lista de reprodicción en Youtube](https://www.youtube.com/watch?v=SaoDps2QBsI&list=PLA050nq-BHwN5CJuPAsFkBTrW_4Xxso_4)) para poder correr un asistente virtual de manera local. Integra distintos modelos de machine learning para poder brindar distintas funcionalidades.
 
@@ -42,6 +44,19 @@ python main.py
 ```
 
 
+```
+# Ejecutar con docker compose desde la carpeta donde se clono este repositorio en la maquina huesped.
+docker compose run --build --rm asistente bash
+
+# Ejecutar aplicación manualmente
+python3 ./main.py
+```
+
+Ejecutar aplicación sin interación con la línea de comandos 
+```
+docker compose run --build --rm asistente
+```
+
 ### x86
 Ya instalado docker con NVIDIA container toolkit.
 
@@ -57,14 +72,24 @@ cd /va
 python main.py
 ```
 
+# Consola interactiva con el contanedor
+docker compose run --build --rm asistente bash
 
+ejecutar aplicación manualmente
+python3 ./main.py
+```
+
+Ejecutar aplicación sin interación con la línea de comandos
+```
+docker compose run --build --rm asistente
+```
 ## Aportaciones
 Este proyecto esta abierto a aportaciones asi que si quieres mejorar o agregar funcionalidades haz un pull request.
 
 # To Do:
 - [X] Transcipción en tiempo real 
 - [X] Detectar palabra clave para que el asistente sepa que se le esta hablando 
-- [ ] Crear Dockerfile para no requerir pull
+- [X] Crear Dockerfile para no requerir pull
 - [ ] Modularizar el __init__ de la clase Asistente en distintas funciones
 - [ ] API OpenAI GPT-3 (No es local, pero su uso sera limitado)
 - [ ] Probar en Jetson Nano
